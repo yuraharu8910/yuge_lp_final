@@ -461,6 +461,51 @@
       </div>
     </div>
     <p class="footer-copy">© 2025 湯気 YUGE Sauna &amp; Spa 神田</p>
+    <!-- ═══════════════════════════
+         予約モーダル
+    ═══════════════════════════ -->
+    <div id="modal-overlay">
+      <div id="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+        <!-- 閉じるボタン（×） -->
+        <button id="modal-close" aria-label="閉じる">×</button>
+
+        <p class="modal-eyebrow">ONLINE RESERVATION</p>
+        <h2 id="modal-title">予約フォーム</h2>
+        <p class="modal-coupon">コード <strong>YUGE10</strong> が自動適用されます（20%OFF）</p>
+
+        <!-- お名前 -->
+        <label for="f-name">お名前 <span class="required">必須</span></label>
+        <input type="text" id="f-name" placeholder="山田 太郎" autocomplete="name">
+
+        <!-- メールアドレス -->
+        <label for="f-email">メールアドレス <span class="required">必須</span></label>
+        <input type="email" id="f-email" placeholder="email@example.com" autocomplete="email">
+
+        <!-- 電話番号 -->
+        <label for="f-tel">電話番号</label>
+        <input type="tel" id="f-tel" placeholder="090-0000-0000" autocomplete="tel">
+
+        <!-- プラン選択 -->
+        <label for="f-plan">ご希望のプラン <span class="required">必須</span></label>
+        <select id="f-plan">
+          <option value="">選択してください</option>
+          <option value="morning">朝活ととのい（¥1,400）</option>
+          <option value="anniversary">10周年パック（¥1,600）</option>
+          <option value="pair">ペア割（¥4,600）</option>
+        </select>
+
+        <!-- 備考 -->
+        <label for="f-message">備考・ご要望</label>
+        <textarea id="f-message" placeholder="ご要望があればご記入ください"></textarea>
+
+        <!-- 送信ボタン -->
+        <button type="button" id="form-submit-btn">予約を申し込む（YUGE10）</button>
+
+        <!-- ステータスメッセージ（送信結果を表示） -->
+        <p id="form-status"></p>
+      </div>
+    </div>
   </footer>
 
   <!-- FLOATING CTA -->
