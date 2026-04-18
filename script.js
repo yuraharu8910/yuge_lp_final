@@ -263,17 +263,26 @@
     resetForm();
   }
 
-  // 「予約する」ボタンにモーダルを紐づける
+  // 変更後：hrefの中身に関係なく、対象クラスのボタン全部にモーダルを紐づける
   document.querySelectorAll('.btn-primary, .floating-btn, .btn-plan, #floating-cta a').forEach(function (btn) {
+    // LINE公式・SNS・tel・mailtoリンクは除外する
     var href = btn.getAttribute('href') || '';
-    if (href.indexOf('reserve') !== -1) {
+    var isExternal = href.indexOf('lin.ee') !== -1      // LINEリンク
+      || href.indexOf('tel:') !== -1         // 電話リンク
+      || href.indexOf('mailto:') !== -1      // メールリンク
+      || href.indexOf('facebook') !== -1     // SNS
+      || href.indexOf('instagram') !== -1
+      || href.indexOf('x.com') !== -1;
+
+    // 外部リンク以外は全部モーダルに紐づける
+    if (!isExternal) {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
         openModal();
       });
     }
   });
-
+  
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
   if (overlay) {
