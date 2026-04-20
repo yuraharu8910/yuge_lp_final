@@ -1377,7 +1377,7 @@ textarea.form-input {
 
 /* ステータスメッセージ（送信結果） */
 #form-status {
-   display: none;
+   display: none !important;
    /* JSで表示切替 */
    margin-top: 12px;
    padding: 10px 14px;
@@ -1449,4 +1449,60 @@ textarea.form-input {
    content: '⚠';
    font-size: 11px;
    flex-shrink: 0;
+}
+
+/* ══════════════════════════════
+   サンクス画面（送信後に表示）
+══════════════════════════════ */
+#modal-thanks {
+   display: none;
+   text-align: center;
+   padding: 20px 0;
+}
+
+#modal-thanks.is-visible {
+   display: block;
+}
+
+.thanks-icon {
+   width: 64px;
+   height: 64px;
+   background: #2e7d32;
+   color: #fff;
+   font-size: 32px;
+   line-height: 64px;
+   border-radius: 50%;
+   margin: 0 auto 20px;
+}
+
+#modal-thanks h3 {
+   font-size: 20px;
+   margin-bottom: 12px;
+   color: var(--charcoal);
+}
+
+#modal-thanks p {
+   font-size: 14px;
+   color: var(--muted);
+   line-height: 1.7;
+   margin-bottom: 8px;
+}
+
+.thanks-sub {
+   font-size: 12px !important;
+   margin-bottom: 24px !important;
+}
+
+#thanks-close-btn {
+   background: var(--charcoal);
+   color: #fff;
+   border: none;
+   padding: 12px 32px;
+   border-radius: 6px;
+   font-size: 14px;
+   cursor: pointer;
+}
+
+#thanks-close-btn:hover {
+   opacity: 0.85;
 }

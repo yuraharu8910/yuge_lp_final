@@ -261,6 +261,11 @@
     document.body.style.overflow = '';
     // モーダルを閉じるときにエラー表示・バリデーション状態もリセット
     resetForm();
+    // サンクス画面をリセットしてフォームを再表示する
+    var formEl = document.getElementById('reserve-form');
+    var thanksEl = document.getElementById('modal-thanks');
+    if (formEl) formEl.style.display = '';
+    if (thanksEl) thanksEl.classList.remove('is-visible');
   }
 
   // 変更後：hrefの中身に関係なく、対象クラスのボタン全部にモーダルを紐づける
@@ -282,7 +287,7 @@
       });
     }
   });
-  
+
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
   if (overlay) {
@@ -338,11 +343,15 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: name, email: email, tel: tel, plan: plan, message: message })
       })
-      .then(function () {
-        showStatus('success', '✓ 予約を受け付けました！担当者よりご連絡します。');
-        resetForm();
-        setTimeout(closeModal, 3000);
-      })
+        .then(function () {
+          // フォームを隠してサンクス画面を表示する
+          var formEl = document.getElementById('reserve-form');
+          var thanksEl = document.getElementById('modal-thanks');
+          if (formEl) formEl.style.display = 'none';
+          if (thanksEl) thanksEl.classList.add('is-visible');
+          resetForm();
+        })
+        
       .catch(function () {
         showStatus('error', '⚠ 送信に失敗しました。お電話でもお気軽にどうぞ。');
         submitBtn.disabled = false;
@@ -385,5 +394,10 @@
     }
     if (submitBtn) submitBtn.disabled = false;
   }
+
+  // サンクス画面の「閉じる」ボタン
+  var thanksCloseBtn = document.getElementById('thanks-close-btn');
+  if (thanksCloseBtn) thanksCloseBtn.addEventListener('click', closeModal);
+
 
 })();
