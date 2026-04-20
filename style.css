@@ -135,7 +135,9 @@ section {
    object-fit: cover;
    object-position: center 30%;
    display: block;
-   animation: kenburns 10s ease-out forwards;
+   -webkit-animation: kenburns 6s ease-out forwards;
+   /* Safari用 */
+   animation: kenburns 6s ease-out forwards;
 }
 
 #fv-overlay {
@@ -1520,13 +1522,24 @@ textarea.form-input {
 }
 
 /* ヒーロー画像がゆっくりズームアウトする演出 */
+@-webkit-keyframes kenburns {
+   from {
+      -webkit-transform: scale(1.15);
+      transform: scale(1.08);
+   }
+
+   to {
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+   }
+}
+
 @keyframes kenburns {
    from {
-      transform: scale(1.08);
+      transform: scale(1.15);
    }
 
    to {
       transform: scale(1.0);
    }
 }
-
