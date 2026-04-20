@@ -135,6 +135,7 @@ section {
    object-fit: cover;
    object-position: center 30%;
    display: block;
+   animation: kenburns 10s ease-out forwards;
 }
 
 #fv-overlay {
@@ -1529,7 +1530,3 @@ textarea.form-input {
    }
 }
 
-#fv-img {
-   animation: kenburns 10s ease-out forwards;
-   /* 追加 */
-}
