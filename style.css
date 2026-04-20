@@ -1506,3 +1506,30 @@ textarea.form-input {
 #thanks-close-btn:hover {
    opacity: 0.85;
 }
+
+/* プランカードがホバーで浮き上がる */
+.plan-card {
+   transition: transform 0.25s ease, box-shadow 0.25s ease;
+   /* 追加 */
+}
+
+.plan-card:hover {
+   transform: translateY(-4px);
+   /* 追加：4px浮き上がる */
+}
+
+/* ヒーロー画像がゆっくりズームアウトする演出 */
+@keyframes kenburns {
+   from {
+      transform: scale(1.08);
+   }
+
+   to {
+      transform: scale(1.0);
+   }
+}
+
+#fv-img {
+   animation: kenburns 10s ease-out forwards;
+   /* 追加 */
+}
