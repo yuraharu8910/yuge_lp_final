@@ -193,8 +193,8 @@ section {
 .btn-primary {
    display: block;
    width: 100%;
-   background: var(--beige);
-   color: var(--charcoal);
+background: #D4622A;
+   color: #fff;
    border: none;
    border-radius: 8px;
    padding: 13px 0;
@@ -213,8 +213,8 @@ section {
 .btn-plan {
    display: block;
    width: 100%;
-   background: var(--beige);
-   color: var(--charcoal);
+background: #D4622A;
+   color: #fff;
    border: none;
    border-radius: 8px;
    padding: 13px 0;
@@ -867,8 +867,8 @@ footer {
 
 .floating-btn {
    display: block;
-   background: var(--beige);
-   color: var(--charcoal);
+background: #D4622A;
+   color: #fff;
    border: none;
    border-radius: 8px;
    padding: 13px 0;
@@ -1602,30 +1602,7 @@ textarea.form-input {
 }
 
 
-/* ══════════════════════════════
-   ② 予約ボタン 強調スタイル
-   .btn-cta-strong を付けるとオレンジ＋白文字になる
-══════════════════════════════ */
 
-/* 予約ボタンの強調色：視認性の高いオレンジ系 */
-.btn-cta-strong {
-  /* グラデーション：左から右にやや暖かいオレンジへ */
-  background: linear-gradient(135deg, #E8823A 0%, #D4622A 100%);
-  color: #fff !important; /* 文字を白に（!importantで上書き確実にする） */
-  /* 下にオレンジの影を付けて「浮いている」感を出す */
-  box-shadow: 0 4px 16px rgba(212, 98, 42, 0.45);
-  border: none;
-  /* ゆっくり拡大するアニメーションを繰り返す（視線を引く効果） */
-  animation: ctaPulse 2.8s ease-in-out infinite;
-}
-
-.btn-cta-strong:hover {
-  opacity: 1 !important; /* 親クラスの hover opacity を上書き */
-  background: linear-gradient(135deg, #F09050 0%, #E07030 100%); /* 明るいオレンジに */
-  box-shadow: 0 6px 20px rgba(212, 98, 42, 0.6);
-  transform: translateY(-1px); /* 少し浮き上がる */
-  animation: none; /* ホバー中はパルスを止める */
-}
 
 /* ゆっくり拡大→縮小を繰り返すアニメーション（ctaPulse） */
 @keyframes ctaPulse {
@@ -1634,14 +1611,3 @@ textarea.form-input {
 }
 
 
-/* Floating CTAの強調ボタン */
-.floating-btn-strong {
-  background: linear-gradient(135deg, #E8823A 0%, #D4622A 100%);
-  color: #fff !important;
-  box-shadow: 0 3px 12px rgba(212, 98, 42, 0.5);
-}
-
-.floating-btn-strong:hover {
-  opacity: 1 !important;
-  background: linear-gradient(135deg, #F09050 0%, #E07030 100%);
-}
