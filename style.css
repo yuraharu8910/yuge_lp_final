@@ -193,7 +193,7 @@ section {
 .btn-primary {
    display: block;
    width: 100%;
-background: #D4622A;
+   background: #D4622A;
    color: #fff;
    border: none;
    border-radius: 8px;
@@ -213,7 +213,7 @@ background: #D4622A;
 .btn-plan {
    display: block;
    width: 100%;
-background: #D4622A;
+   background: #D4622A;
    color: #fff;
    border: none;
    border-radius: 8px;
@@ -867,7 +867,7 @@ footer {
 
 .floating-btn {
    display: block;
-background: #D4622A;
+   background: #D4622A;
    color: #fff;
    border: none;
    border-radius: 8px;
@@ -1551,54 +1551,65 @@ textarea.form-input {
 
 /* スライドショーのコンテナ：#fv-hero の全面を覆う */
 #fv-slideshow {
-  position: absolute;
-  inset: 0; /* top:0 right:0 bottom:0 left:0 の省略形 */
-  width: 100%;
-  height: 100%;
+   position: absolute;
+   inset: 0;
+   /* top:0 right:0 bottom:0 left:0 の省略形 */
+   width: 100%;
+   height: 100%;
 }
 
 /* 各スライド：全面に広がる背景画像 */
 .fv-slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;          /* 画像をコンテナいっぱいに拡大 */
-  background-position: center 30%; /* 画像の上部30%あたりを中心に表示 */
-  opacity: 0;                      /* 初期状態は透明（非表示） */
-  /* opacityを1秒かけて変化させる（フェード効果） */
-  transition: opacity 1s ease-in-out;
+   position: absolute;
+   inset: 0;
+   background-size: cover;
+   /* 画像をコンテナいっぱいに拡大 */
+   background-position: center 30%;
+   /* 画像の上部30%あたりを中心に表示 */
+   opacity: 0;
+   /* 初期状態は透明（非表示） */
+   /* opacityを1秒かけて変化させる（フェード効果） */
+   transition: opacity 1s ease-in-out;
 }
 
 /* .active クラスが付いたスライドだけ表示する */
 .fv-slide.active {
-  opacity: 1;
+   opacity: 1;
 }
 
 /* ドットインジケーター（下部中央の●●●） */
 #fv-dots {
-  position: absolute;
-  bottom: 140px; /* フローティングCTAと重ならないよう上に配置 */
-  left: 50%;
-  transform: translateX(-50%); /* 中央揃え */
-  display: flex;
-  gap: 8px;
-  z-index: 2; /* オーバーレイより手前に表示 */
+   position: absolute;
+   bottom: 140px;
+   /* フローティングCTAと重ならないよう上に配置 */
+   left: 50%;
+   transform: translateX(-50%);
+   /* 中央揃え */
+   display: flex;
+   gap: 8px;
+   z-index: 2;
+   /* オーバーレイより手前に表示 */
 }
 
 /* 各ドット */
 .fv-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%; /* 丸くする */
-  background: rgba(250, 250, 248, 0.4); /* 非アクティブ：薄い白 */
-  transition: background 0.3s, width 0.3s;
-  cursor: pointer;
+   width: 6px;
+   height: 6px;
+   border-radius: 50%;
+   /* 丸くする */
+   background: rgba(250, 250, 248, 0.4);
+   /* 非アクティブ：薄い白 */
+   transition: background 0.3s, width 0.3s;
+   cursor: pointer;
 }
 
 /* アクティブなドット：横長にして強調 */
 .fv-dot.active {
-  background: var(--beige); /* ベージュ色 */
-  width: 18px; /* 丸から横長の楕円に */
-  border-radius: 3px;
+   background: var(--beige);
+   /* ベージュ色 */
+   width: 18px;
+   /* 丸から横長の楕円に */
+   border-radius: 3px;
 }
 
 
@@ -1606,8 +1617,15 @@ textarea.form-input {
 
 /* ゆっくり拡大→縮小を繰り返すアニメーション（ctaPulse） */
 @keyframes ctaPulse {
-  0%, 100% { transform: scale(1); }
-  50%       { transform: scale(1.025); } /* 最大2.5%拡大 */
+
+   0%,
+   100% {
+      transform: scale(1);
+   }
+
+   50% {
+      transform: scale(1.025);
+   }
+
+   /* 最大2.5%拡大 */
 }
-
-
