@@ -419,14 +419,12 @@
     function goTo(index) {
       // 現在のスライドとドットから .active を除去
       slides[currentIndex].classList.remove('active');
-      dots[currentIndex].classList.remove('active');
 
       // 新しいインデックスを設定（配列の末尾を超えたら0に戻る）
       currentIndex = (index + slides.length) % slides.length;
 
       // 新しいスライドとドットに .active を付与
       slides[currentIndex].classList.add('active');
-      dots[currentIndex].classList.add('active');
     }
 
     // タイマーをセット：INTERVAL ごとに次のスライドへ進む
@@ -434,17 +432,6 @@
       goTo(currentIndex + 1);
     }, INTERVAL);
 
-    // ドットをクリックすると任意のスライドに飛べる
-    dots.forEach(function (dot, i) {
-      dot.addEventListener('click', function () {
-        clearInterval(timer);        // クリック時は自動再生をリセット
-        goTo(i);
-        // クリック後も自動再生を再開する
-        timer = setInterval(function () {
-          goTo(currentIndex + 1);
-        }, INTERVAL);
-      });
-    });
   })();
 
 

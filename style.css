@@ -1577,40 +1577,6 @@ textarea.form-input {
    opacity: 1;
 }
 
-/* ドットインジケーター（下部中央の●●●） */
-#fv-dots {
-   position: absolute;
-   bottom: 140px;
-   /* フローティングCTAと重ならないよう上に配置 */
-   left: 50%;
-   transform: translateX(-50%);
-   /* 中央揃え */
-   display: flex;
-   gap: 8px;
-   z-index: 2;
-   /* オーバーレイより手前に表示 */
-}
-
-/* 各ドット */
-.fv-dot {
-   width: 6px;
-   height: 6px;
-   border-radius: 50%;
-   /* 丸くする */
-   background: rgba(250, 250, 248, 0.4);
-   /* 非アクティブ：薄い白 */
-   transition: background 0.3s, width 0.3s;
-   cursor: pointer;
-}
-
-/* アクティブなドット：横長にして強調 */
-.fv-dot.active {
-   background: var(--beige);
-   /* ベージュ色 */
-   width: 18px;
-   /* 丸から横長の楕円に */
-   border-radius: 3px;
-}
 
 
 
